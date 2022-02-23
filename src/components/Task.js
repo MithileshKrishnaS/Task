@@ -31,6 +31,9 @@ const Task = () => {
             },
         })
         .then(response => response.json())
+        .then((json)=>{
+            getTask(json)
+        })
         document.getElementById("tid").value  =   '';
         document.getElementById("thname").value   =   '';
         document.getElementById("tdate").value  =   '';
@@ -47,6 +50,10 @@ const Task = () => {
                 Authorization: 'Bearer abcdxyz',
                 'Content-Type': 'application/json',
             },
+        })
+        .then(response => response.json())
+        .then((json)=>{
+            getTask(json)
         })
     }
 
@@ -78,6 +85,10 @@ const Task = () => {
                 'Content-Type': 'application/json',
             },
         })
+        .then((res)=>res.json())
+        .then((json)=>{
+            getTask(json)
+        })
         document.getElementById("did").value='';
         document.getElementById("ds").value='';
     }
@@ -93,8 +104,6 @@ const Task = () => {
     return (
         <div>
             <h1>Task Manager</h1>
-            <br></br>
-            <h3>Please Refersh To see The Results For Insert,Change And Delete Tasks</h3>
             <br></br>
             <div className="whole">
                 <div className="each">
